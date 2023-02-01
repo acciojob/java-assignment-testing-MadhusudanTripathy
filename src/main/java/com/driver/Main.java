@@ -1,4 +1,5 @@
-/**
+package com.driver;
+/*
  * Main class of the Java program. 
  * 
  */
@@ -10,7 +11,7 @@ public class Main {
         //your code here
          Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
-        String s = "";
+        StringBuilder s = new StringBuilder();
         boolean toggle = false;
         
         char[] alphabets = "abcdefghijklmnopqrstuvwyz".toCharArray();
@@ -23,9 +24,9 @@ public class Main {
         while(N > 0) {
             char ch = q.remove();
             if (toggle)
-                s = s + ch;
+                s.append(ch);
             else
-                s = ch + s;
+                s.insert(0, ch);
             
             toggle = !toggle;
             
